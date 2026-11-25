@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
-OLD_CONTACTS = ("dengjiajicarl", "dengjiaji@", "ai4chip 微信交流群")
+OLD_CONTACTS = ("dengjiajicarl", "dengjiaji@")
 
 
 def require(condition, message):
@@ -176,11 +176,6 @@ def verify():
         require(section_pages("PCB") == [workflow, *design_pages], f"{lang}: incorrect PCB navigation")
         require(all(figure.select_one("a[href]") and figure.select_one("img[alt]") for figure in pages[workflow].select("figure"))
                 and pages[workflow].select_one("figure"), f"{lang}: missing linked workflow illustrations")
-        community = pages[lang_root / "about/index.html"]
-        links = {a["href"] for a in community.select("article a[href]")}
-        repo_url = "https://github.com/SIG-Void/Roadbook-AI4PCB"
-        require({repo_url + path for path in ("/compare", "/issues", "/graphs/contributors")} <= links,
-                f"{lang}: missing community contribution links")
         featured = pages[lang_root / "research/benchmarks/index.html"]
         benchmark_sections = [node["id"] for node in featured.select("article h2")]
         require(benchmark_sections[:3] == ["ale", "omnilayout", "benchcad-t6"],

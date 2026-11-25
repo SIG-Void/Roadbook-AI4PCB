@@ -2,8 +2,6 @@
 
 发现值得收录的 PCB 论文、项目、产品或教程？欢迎发来链接，附一句介绍。也欢迎补充代码和数据、修正失效链接，或贡献一套能运行的 Harbor 环境。
 
-[提交 Pull Request](https://github.com/SIG-Void/Roadbook-AI4PCB/compare) · [提出建议](https://github.com/SIG-Void/Roadbook-AI4PCB/issues) · [查看所有贡献者](https://github.com/SIG-Void/Roadbook-AI4PCB/graphs/contributors)
-
 ## 我们在研究什么
 
 我们记录工程师在哪些 PCB 设计环节使用大模型，对照真实任务检查公开评测的覆盖范围，再从操作轨迹和答卷中分析国产模型的强项与薄弱环节。[评测与答卷](benchmarks.md#ale) · [工程笔记](blog.md)
