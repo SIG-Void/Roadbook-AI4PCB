@@ -33,4 +33,4 @@ Read the task definition in [PCBWorld](https://arxiv.org/abs/2607.05915) to see 
 
 [Trace the RP2040 power rails](rp2040-power.md), [check a placement origin](assembly-origin.md), or [separate board families for training](board-family-split.md). [Read all engineering notes →](blog.md)
 
-PCB specialists can help define benchmarks and review model submissions. Contact SIGVoid about joint research or custom training data. [Partnerships and WeChat →](about.md#collaborate)
+Join researchers and engineers in our AI × PCB group to discuss board design and model evaluation. [Join the WeChat group →](about.md#collaborate)
