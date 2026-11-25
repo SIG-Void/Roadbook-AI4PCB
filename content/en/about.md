@@ -12,5 +12,6 @@ We document where engineers use large language models in PCB design. We compare 
 - **Help large language models design better PCBs.** We study how models apply design constraints, compare alternatives, and check a board. Methods include supervised fine-tuning (SFT) and reinforcement learning (RL).
 - **Commission PCB training data.** We can prepare task-specific examples, traces of engineers’ actions, and reference submissions with acceptance criteria.
 
-**WeChat**　`LeeFinn2027`<br>
-Lee, co-founder of SIGVoid (北京思格涡野智能科技).
+We started a WeChat group for researchers and engineers working on AI for PCB design. Add me on WeChat to join the conversation.
+
+**WeChat**　`LeeFinn2027` · Lee, Cofounder of SIGVoid (北京思格涡野智能科技).
