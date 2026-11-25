@@ -2,8 +2,6 @@
 
 Found a PCB paper, project, product, or tutorial to include? Send the link and one sentence about it. You can also add code or data, fix a broken link, or contribute a working Harbor environment.
 
-[Open a pull request](https://github.com/SIG-Void/Roadbook-AI4PCB/compare) · [Suggest a resource](https://github.com/SIG-Void/Roadbook-AI4PCB/issues) · [View all contributors](https://github.com/SIG-Void/Roadbook-AI4PCB/graphs/contributors)
-
 ## What we study
 
 We document where engineers use large language models in PCB design. We compare public benchmarks with those tasks to find gaps. We use action traces and submitted designs to study where Chinese models succeed or need improvement. [Benchmarks and submissions](benchmarks.md#ale) · [Engineering notes](blog.md)
