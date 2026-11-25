@@ -1,0 +1,5 @@
+.reference/
+dist/
+.venv/
+__pycache__/
+.DS_Store

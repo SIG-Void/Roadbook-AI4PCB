@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 360 312" role="img" aria-labelledby="title description">
+  <title id="title">RP2040 的 +1V1 焊盘分布</title>
+  <desc id="description">六个蓝色焊盘属于 +1V1，四个空心圈为该网络过孔。44 脚属于 +3V3。各标记位置来自 R3-S1 的 IPC-D-356A 文件，细线均为标注引线。</desc>
+  <style>text { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+#guide {display:none}
+@media (prefers-reduced-motion:no-preference) { #guide {display:inline;animation:focus 1.15s ease-in-out .1s 1 both} }
+@keyframes focus {0%,100% {opacity:0} 45% {opacity:.7}}
+svg:target #guide {display:none!important;animation:none!important}</style>
+  <rect x="0" y="0" width="360" height="312" stroke="none" stroke-width="0" fill="#FFFFFF" />
+  <text x="17" y="26" text-anchor="start" font-size="20" font-weight="600" fill="#161616">+1V1</text>
+  <text x="312" y="26" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">R3-S1</text>
+  <g id="peripheral-pads">
+    <rect x="202.228" y="55.5784" width="8.54329" height="8.54329" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="178.998" y="241.878" width="8.54329" height="8.54329" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="167.499" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="186.119" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="155.099" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="140.218" y="40.0684" width="8.54329" height="8.54329" rx="0.55" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <rect x="101.079" y="110.899" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="166.719" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="161.319" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="166.719" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="110.899" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="198.519" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="192.299" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#525252" />
+    <rect x="167.499" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="161.319" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="117.119" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="123.299" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="185.299" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="191.519" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="117.899" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="124.119" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="130.299" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="136.519" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="192.299" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="198.519" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="191.519" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="185.299" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="129.519" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="179.119" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="172.899" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="160.499" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="154.319" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="148.099" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="141.919" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="135.699" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="129.519" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="123.299" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="206.519" y="117.119" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="135.699" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="141.919" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="148.099" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="154.319" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="160.499" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="172.899" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="101.079" y="179.119" width="12.4016" height="3.58267" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="142.699" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="136.519" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="124.119" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="130.299" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="148.919" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="117.899" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="186.119" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="173.719" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="179.899" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="148.919" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="155.099" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="142.699" y="199.519" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="179.899" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+    <rect x="173.719" y="94.0792" width="3.58267" height="12.4016" rx="0.55" stroke="none" stroke-width="0" fill="#D6D6D6" />
+  </g>
+  <g id="four-vias">
+    <circle cx="156.89" cy="78.59" r="4.4" stroke="#525252" stroke-width="1.75" fill="#FFFFFF" />
+    <circle cx="156.89" cy="78.59" r="1" stroke="none" stroke-width="0" fill="#525252" />
+    <circle cx="170.87" cy="120.44" r="4.4" stroke="#525252" stroke-width="1.75" fill="#FFFFFF" />
+    <circle cx="170.87" cy="120.44" r="1" stroke="none" stroke-width="0" fill="#525252" />
+    <circle cx="172.4" cy="233.59" r="4.4" stroke="#525252" stroke-width="1.75" fill="#FFFFFF" />
+    <circle cx="172.4" cy="233.59" r="1" stroke="none" stroke-width="0" fill="#525252" />
+    <circle cx="169.29" cy="185.56" r="4.4" stroke="#525252" stroke-width="1.75" fill="#FFFFFF" />
+    <circle cx="169.29" cy="185.56" r="1" stroke="none" stroke-width="0" fill="#525252" />
+  </g>
+  <text x="161" y="158" text-anchor="middle" font-size="20" font-weight="600" fill="#525252">U3</text>
+  <polyline points="144.49,44.34 133,47 105,47" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="19" y="51" text-anchor="start" font-size="16" font-weight="600" fill="#525252">C6.1</text>
+  <text x="19" y="69" text-anchor="start" font-size="16" font-weight="400" fill="#525252">100 nF</text>
+  <polyline points="206.5,59.85 221,48 234,48" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="239" y="49" text-anchor="start" font-size="16" font-weight="600" fill="#525252">C8.1</text>
+  <text x="239" y="67" text-anchor="start" font-size="16" font-weight="400" fill="#525252">1 µF</text>
+  <polyline points="156.89,100.28 145,99 103,99" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="19" y="104" text-anchor="start" font-size="16" font-weight="600" fill="#525252">50 · DVDD</text>
+  <polyline points="187.91,100.28 188,86 235,86" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="239" y="92" text-anchor="start" font-size="16" font-weight="600" fill="#0F62FE">45 · +1V1</text>
+  <text x="239" y="110" text-anchor="start" font-size="16" font-weight="400" fill="#525252">VREG_VOUT</text>
+  <polyline points="194.09,100.28 219,139 234,139" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="239" y="145" text-anchor="start" font-size="16" font-weight="600" fill="#525252">44 · +3V3</text>
+  <text x="239" y="163" text-anchor="start" font-size="16" font-weight="400" fill="#525252">VREG_IN</text>
+  <polyline points="169.29,205.72 198,212 233,212" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="239" y="217" text-anchor="start" font-size="16" font-weight="600" fill="#525252">23 · DVDD</text>
+  <polyline points="183.27,246.15 160,246 104,246" fill="none" stroke="#8D8D8D" stroke-width="1" stroke-linejoin="round" />
+  <text x="19" y="249" text-anchor="start" font-size="16" font-weight="600" fill="#525252">C7.1</text>
+  <text x="19" y="267" text-anchor="start" font-size="16" font-weight="400" fill="#525252">100 nF</text>
+  <g id="map-legend">
+    <rect x="20" y="289" width="8" height="8" stroke="none" stroke-width="0" fill="#0F62FE" />
+    <text x="37" y="298" text-anchor="start" font-size="17" font-weight="400" fill="#161616">6 个焊盘</text>
+    <circle cx="170" cy="294" r="4.4" stroke="#525252" stroke-width="1.75" fill="#FFFFFF" />
+    <circle cx="170" cy="294" r="1" stroke="none" stroke-width="0" fill="#525252" />
+    <text x="182" y="298" text-anchor="start" font-size="17" font-weight="400" fill="#161616">4 个过孔</text>
+  </g>
+  <circle cx="187.91" cy="100.28" r="9" fill="none" stroke="#0F62FE" stroke-width="1.8" id="guide" />
+</svg>

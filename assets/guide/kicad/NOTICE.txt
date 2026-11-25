@@ -1,0 +1,9 @@
+Source: Getting Started in KiCad, version 9.0.
+Copyright The KiCad Documentation Contributors.
+Tutorial contributors: Graham Keeth, Jon Evans, and Glenn Peterson.
+License for these copies: Creative Commons Attribution 3.0.
+https://creativecommons.org/licenses/by/3.0/
+https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html
+
+The five PNG files are reproduced without edits. The tutorial publishes the original
+files under images/ next to the HTML document, using the same filenames.

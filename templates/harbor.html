@@ -1,0 +1,58 @@
+{% macro tree(nodes, depth=0) %}
+<ul>{% for node in nodes %}
+{% if node.children is defined %}
+<li class="hb-folder"><details {% if depth == 0 %}open{% endif %}>
+  <summary><span>{{ node.name }}</span> <small>{{ node.count }}</small></summary>
+  {{ tree(node.children, depth + 1) }}
+</details></li>
+{% else %}
+<li class="hb-leaf"><a translate="no" href="{{ asset(node.url) }}" data-file="{{ node.path }}" data-size="{{ node.size }}" data-kind="{{ node.kind }}"
+    {% if node.path == harbor.instruction.path %}aria-current="true"{% endif %}>{{ node.name }}</a></li>
+{% endif %}{% endfor %}</ul>
+{% endmacro %}
+{% set instruction = harbor.instruction %}
+{% set readme = harbor.readme %}
+<p class="hb-summary">{{ harbor.summary[lang] }}</p>
+{% if harbor.get('status') %}<p class="hb-status">{{ harbor.status[lang] }}</p>{% endif %}
+<div class="hb-meta">
+  {% if harbor.get('platform') %}<span>{{ harbor.platform }}</span>{% endif %}
+  <a download="{{ harbor.archive }}" href="{{ asset(harbor.archive_url) }}">{{ harbor.archive }} <span>· {{ harbor.archive_size }}</span> ↓</a>
+  {% if repo %}<a href="{{ repo }}/tree/main/{{ harbor.directory_url }}">{{ '在 GitHub 查看' if zh else 'View on GitHub' }} ↗</a>{% endif %}
+</div>
+<div class="harbor-viewer" data-lang="{{ lang }}">
+  <details open class="hb-directory">
+    <summary><span>{{ '文件' if zh else 'Files' }}</span> <small>{{ harbor.count }}</small></summary>
+    <div class="hb-directory-body">
+      <label class="hb-filter-label" hidden>
+        <span>{{ '搜索题包文件' if zh else 'Search task files' }}</span>
+        <input type="search" autocomplete="off" placeholder="{{ '搜索文件…' if zh else 'Search files…' }}">
+      </label>
+      <div class="hb-count" aria-live="polite">{{ harbor.count }} {{ '个文件' if zh else 'files' }}</div>
+      <nav class="hb-tree" aria-label="{{ '题包文件与文件夹' if zh else 'Task files and folders' }}">{{ tree(harbor.tree) }}</nav>
+    </div>
+  </details>
+  <section class="hb-reader" aria-label="{{ '文件内容' if zh else 'File contents' }}">
+    <div class="hb-toolbar">
+      <div class="hb-shortcuts">
+        <a href="{{ asset(instruction.url) }}" data-shortcut="{{ instruction.path }}" aria-current="true">{{ '题面' if zh else 'Instruction' }}</a>
+        <a href="{{ asset(readme.url) }}" data-shortcut="{{ readme.path }}">README</a>
+      </div>
+      <div class="hb-actions">
+        <button class="hb-copy" type="button" hidden>{{ '复制' if zh else 'Copy' }}</button>
+        <a class="hb-download" href="{{ asset(instruction.url) }}" download="{{ instruction.name }}">{{ '下载' if zh else 'Download' }} ↓</a>
+      </div>
+    </div>
+    <div class="hb-file-info" aria-live="polite"><span class="hb-path" translate="no">{{ instruction.path }}</span><span class="hb-size">{{ instruction.size }}</span></div>
+    <div class="hb-pane" tabindex="0" role="region" aria-label="{{ '文件预览' if zh else 'File preview' }}">
+      <p class="hb-message" role="status" hidden></p>
+      <button type="button" class="hb-retry" hidden>{{ '重试' if zh else 'Retry' }}</button>
+      <pre class="hb-code" lang="en" translate="no"><code>{{ harbor.instruction_text }}</code></pre>
+      <img class="hb-image" hidden alt="">
+    </div>
+    <span class="hb-notice" role="status"></span>
+  </section>
+</div>
+<details class="hb-dependencies">
+  <summary>{{ '外部依赖' if zh else 'External dependencies' }} <span>({{ harbor.dependencies|length }})</span></summary>
+  <ul>{% for dep in harbor.dependencies %}<li>{% if dep.get('url') %}<a href="{{ dep.url }}">{{ dep.name }}</a>{% else %}<strong>{{ dep.name }}</strong>{% endif %} — {{ dep.description[lang] }}</li>{% endfor %}</ul>
+</details>

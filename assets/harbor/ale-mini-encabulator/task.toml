@@ -1,0 +1,27 @@
+schema_version = "1.4"
+artifacts = ["/app/output/mini_encabulator.kicad_pcb"]
+
+[task]
+name = "roadbook/ale-mini-encabulator"
+version = "1.0.0"
+description = "Harbor adaptation of the ALE v1.1 Mini Encabulator PCB layout task."
+authors = [{name = "SIGVoid (Harbor adaptation)"}]
+keywords = ["pcb", "kicad", "layout", "agents-last-exam"]
+
+[agent]
+
+[environment]
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 300
+
+[verifier.environment]
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192

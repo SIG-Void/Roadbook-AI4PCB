@@ -1,0 +1,75 @@
+.frame:has(.harbor-viewer) main { max-width: 1180px }
+.frame:has(.harbor-viewer) .contents, main:has(.harbor-viewer) .inline-toc,
+.frame:has(.harbor-viewer) .outline-shortcut { display: none }
+@media (min-width: 1251px) {
+  .frame:has(.harbor-viewer) { grid-template-columns: 260px minmax(0, 1fr) }
+}
+article:has(.harbor-viewer) h2 { margin: 25px 0 6px }
+article:has(.harbor-viewer) h2 code { padding: 0; background: none; color: var(--title) }
+.hb-summary, .hb-status { margin: 4px 0; font-size: 14px; line-height: 1.65 }
+.hb-status { color: var(--quiet); font-size: 13px }
+.hb-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 19px; color: var(--quiet); font-size: 12px; margin: 10px 0 16px }
+.hb-meta a { overflow-wrap: anywhere }
+.harbor-viewer {
+  display: grid; grid-template-columns: clamp(210px, 26%, 330px) minmax(0, 1fr);
+  border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+  font-size: 13px; line-height: 1.5;
+}
+.harbor-viewer [hidden] { display: none !important }
+.hb-directory { min-width: 0; background: #f8f8f8; border-right: 1px solid var(--line) }
+.hb-directory > summary { color: var(--title); padding: 11px 15px 7px; font-weight: 650 }
+.hb-directory > summary small { display: none; color: var(--quiet); font-size: 11px; margin-left: 3px; font-weight: 400 }
+.hb-directory-body { padding: 0 12px 8px }
+.hb-filter-label > span, .hb-notice {
+  position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.hb-filter-label input {
+  width: 100%; padding: 7px 9px; background: white; border: 1px solid #c6c6c6; border-radius: 5px; color: var(--title);
+}
+.hb-count { margin: 7px 0; font-size: 11px; color: var(--quiet) }
+.hb-tree { height: clamp(260px, 48vh, 500px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 2px 4px 4px 1px }
+.hb-tree ul { list-style: none; margin: 0; padding: 0 }
+.hb-tree details > ul { margin: 0 0 2px 7px; padding-left: 8px; border-left: 1px solid var(--line) }
+.hb-tree li { padding: 0; margin: 1px 0 }
+.harbor-viewer summary { cursor: pointer }
+.harbor-viewer summary:focus-visible, .hb-dependencies summary:focus-visible, .hb-pane:focus-visible { outline: 2px solid var(--link); outline-offset: -2px }
+.hb-tree summary { color: var(--title); border-radius: 4px; padding: 4px 5px; font-size: 12px }
+.hb-tree summary::marker, .hb-directory > summary::marker { color: var(--quiet); font-size: .85em }
+.hb-tree summary small { color: var(--quiet); font-weight: normal; margin-left: 2px }
+.hb-tree li.hb-leaf > a { display: block; padding: 4px 6px; border-radius: 4px; text-decoration: none; font: 12px/1.55 ui-monospace, monospace; color: var(--text) }
+.hb-tree li.hb-leaf > a[aria-current] { background: var(--selected); color: var(--link-hover); font-weight: 600 }
+.hb-tree summary:hover, .hb-tree a:hover, .hb-actions button:hover, .hb-shortcuts a:hover { background: #eaeaea }
+.hb-reader { display: grid; grid-template-rows: auto auto 1fr; min-width: 0; min-height: 0 }
+.hb-toolbar, .hb-file-info { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; padding: 8px 13px; border-bottom: 1px solid var(--line) }
+.hb-file-info { padding-block: 9px; color: var(--quiet); font-size: 11px }
+.hb-path { min-width: 0; font: 12px/1.5 ui-monospace, monospace; color: var(--title); overflow-wrap: anywhere }
+.hb-size { margin-left: auto; white-space: nowrap }
+.hb-shortcuts, .hb-actions { display: flex; align-items: center; gap: 3px }
+.hb-shortcuts a, .hb-actions > *, .hb-retry {
+  display: inline-flex; align-items: center; padding: 5px 8px; border: 0; border-radius: 4px;
+  background: transparent; color: var(--text); font-size: 12px; text-decoration: none; line-height: 1.5;
+}
+.hb-shortcuts a[aria-current] { background: var(--selected); color: var(--link-hover) }
+.hb-actions .hb-download, .hb-retry { color: var(--link) }
+.hb-actions button:disabled { color: var(--border-strong); cursor: default }
+.hb-pane { height: clamp(260px, 50vh, 520px); overflow: auto; scrollbar-width: thin; padding: 12px 16px; overscroll-behavior: contain }
+.hb-pane pre { margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; overflow: visible }
+.hb-pane pre code { font: 12.5px/1.7 ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; tab-size: 4 }
+.hb-pane img { display: block; max-width: 100%; height: auto }
+.hb-message { margin: 0; color: var(--quiet) }
+.hb-dependencies { margin: 12px 0; padding: 9px 13px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px }
+.hb-dependencies summary { cursor: pointer; color: var(--title) }
+.hb-dependencies summary span { color: var(--quiet) }
+.hb-dependencies ul { margin: 10px 0 }
+.hb-dependencies li { margin-bottom: 6px }
+@media (max-width: 700px) {
+  .harbor-viewer { display: block }
+  .hb-directory { border-right: 0; border-bottom: 1px solid var(--line) }
+  .hb-directory > summary { padding: 10px 12px }
+  .hb-directory:not([open]) > summary small { display: inline }
+  .hb-tree { max-height: 225px; height: auto }
+  .hb-tree li > a, .hb-tree summary { padding-block: 6px }
+  .hb-reader { display: block }
+  .hb-pane { height: clamp(270px, 52vh, 440px); padding: 10px 12px }
+  .hb-toolbar, .hb-file-info { padding-inline: 8px }
+}

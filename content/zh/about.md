@@ -1,0 +1,18 @@
+## 一起完善这份目录
+
+发现值得收录的 PCB 论文、项目、产品或教程？欢迎发来链接，附一句介绍。也欢迎补充代码和数据、修正失效链接，或贡献一套能运行的 Harbor 环境。
+
+[提交 Pull Request](https://github.com/SIG-Void/Roadbook-AI4PCB/compare) · [提出建议](https://github.com/SIG-Void/Roadbook-AI4PCB/issues) · [查看所有贡献者](https://github.com/SIG-Void/Roadbook-AI4PCB/graphs/contributors)
+
+## 我们在研究什么
+
+我们记录工程师在哪些 PCB 设计环节使用大模型，对照真实任务检查公开评测的覆盖范围，再从操作轨迹和答卷中分析国产模型的强项与薄弱环节。[评测与答卷](benchmarks.md#ale) · [工程笔记](blog.md)
+
+<h2 id="collaborate">寻求合作</h2>
+
+- **共同制定 PCB 评测标准。** 欢迎 PCB 专家提供工程任务，一起确定交付文件、制定评分规则、复核模型答卷。
+- **提高大模型的 PCB 设计能力。** 欢迎硬件和模型团队一起研究怎样用监督微调（SFT）或强化学习（RL），让模型学会应用设计约束、比较方案、验证板图。
+- **定制 PCB 训练数据。** 我们可以按任务提供训练样本、工程师操作轨迹和带验收依据的参考答卷。
+
+**联系微信**　`LeeFinn2027`<br>
+Lee，SIGVoid（北京思格涡野智能科技）联合创始人。

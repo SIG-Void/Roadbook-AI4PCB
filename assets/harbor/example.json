@@ -1,0 +1,35 @@
+{
+  "slug": "ale-mini-encabulator",
+  "archive": "ale-mini-encabulator.zip",
+  "platform": "linux/amd64",
+  "summary": {
+    "en": "Fit four M3 mounting holes to the SN25 enclosure, route the board, and connect the ground pours on both copper layers.",
+    "zh": "按 SN25 外壳的孔距放置四个 M3 安装孔，完成布线，并用过孔连接上下两层地铜。"
+  },
+  "dependencies": [
+    {
+      "name": "Harbor 0.25.0",
+      "description": {
+        "en": "Starts separate containers for the agent and verifier.",
+        "zh": "分别启动作答容器和评分容器。"
+      },
+      "url": "https://pypi.org/project/harbor/0.25.0/"
+    },
+    {
+      "name": "Docker",
+      "description": {
+        "en": "Runs the Linux AMD64 image. On an ARM host, enable AMD64 emulation.",
+        "zh": "运行 Linux AMD64 镜像。ARM 主机需要启用 AMD64 模拟。"
+      },
+      "url": "https://docs.docker.com/get-started/get-docker/"
+    },
+    {
+      "name": "KiCad 10.0.0",
+      "description": {
+        "en": "The official image supplies the command-line tools and the standard symbol and footprint libraries.",
+        "zh": "官方镜像提供命令行工具、符号库和封装库。"
+      },
+      "url": "https://hub.docker.com/r/kicad/kicad/tags?name=10.0.0"
+    }
+  ]
+}

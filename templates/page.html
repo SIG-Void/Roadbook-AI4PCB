@@ -1,0 +1,89 @@
+{% macro outline() %}
+    {% if headings %}<details id="on-this-page" class="inline-toc">
+      <summary>{{ '本页目录' if zh else 'On this page' }}</summary>
+      <nav aria-label="{{ '本页章节' if zh else 'Page sections' }}">{% for h in headings %}<a href="#{{ h.id }}" class="{{ h.level }}">{{ h.text }}</a>{% endfor %}</nav>
+    </details>{% endif %}
+{% endmacro %}
+{% macro versioned(name) -%}{{ asset('assets/' + name) }}?v={{ versions[name] }}{%- endmacro %}
+{% set workflow_image = 'pcb-workflow-' ~ lang ~ '.jpg' %}
+<!doctype html>
+<html lang="{{ 'zh-CN' if zh else 'en' }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title(lang) }}{% if page.key != 'home' %} · {{ brand }}{% endif %}</title>
+  <meta name="description" content="{{ description }}"><meta name="theme-color" content="#FFFFFF">
+  <script id="site-language" src="{{ versioned('locale.js') }}" data-chinese="{{ href(page.key,'zh') }}" data-fragments='{{ fragments|tojson }}'></script>
+  <link rel="icon" href="{{ versioned('pcb-favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ versioned('site.css') }}">
+  {% if page.key == 'harbor' %}
+  <link rel="stylesheet" href="{{ versioned('harbor.css') }}">
+  <script defer src="{{ versioned('harbor.js') }}"></script>
+  {% endif %}
+  {% if public_url %}<link rel="canonical" href="{{ public_url }}/{{ folder + '/' if folder else '' }}">
+  {% for language in ['zh','en'] %}<link rel="alternate" hreflang="{{ 'zh-CN' if language == 'zh' else 'en' }}" href="{{ public_url }}/{{ page.folder(language) + '/' if page.folder(language) else '' }}">{% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ public_url }}/{{ page.route + '/' if page.route else '' }}">
+  {% set share_image = workflow_image if page.key == 'home' else 'pcb-design-map.png' %}
+  <meta property="og:image" content="{{ public_url }}/assets/{{ share_image }}?v={{ versions[share_image] }}">{% endif %}
+  <meta property="og:title" content="{{ page.title(lang) }}"><meta property="og:description" content="{{ description }}">
+  <script defer src="{{ versioned('site.js') }}"></script>
+</head>
+<body data-root="{{ root }}" data-locale="{{ lang }}">
+<a class="skip" href="#main">{{ '跳到正文' if zh else 'Skip to content' }}</a>
+<header class="mast">
+  <a class="brand" href="{{ href('home') }}"><img src="{{ versioned('pcb-mark.svg') }}" width="34" height="34" alt=""><span><b>{{ brand.split(" ", 1)[0] }}</b> {{ brand.split(" ", 1)[1] }}</span></a>
+  <button class="search-launch" aria-haspopup="dialog" aria-label="{{ '搜索本站' if zh else 'Search this site' }}">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.4"/><path d="m15.5 15.5 5 5"/></svg>
+    <span>{{ '搜索论文、工具、数据集…' if zh else 'Search papers, tools, and datasets…' }}</span><kbd>⌘ K</kbd>
+  </button>
+  <nav class="locales" aria-label="语言 / Language">{% for code, label in [('zh','中文'),('en','EN')] %}
+    <a href="{{ href(page.key,code) }}" lang="{{ 'zh-CN' if code=='zh' else 'en' }}" {% if code==lang %}aria-current="true"{% endif %}>{{ label }}</a>{% endfor %}
+  </nav>
+  {% if repo %}<a class="top-link" href="{{ repo }}">GitHub ↗</a>{% else %}<a class="top-link" href="{{ href('about') }}">{{ '关于本站' if zh else 'About' }} ↗</a>{% endif %}
+  <button class="menu-toggle" aria-controls="directory" aria-expanded="false" aria-label="{{ '目录' if zh else 'Menu' }}"><svg width="21" height="21" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+</header>
+<div class="frame">
+  <button class="scrim" aria-label="{{ '关闭目录' if zh else 'Close menu' }}" tabindex="-1"></button>
+  <aside class="rail" id="directory"><nav aria-label="{{ '网站目录' if zh else 'Site navigation' }}">
+    {% if headings %}<a class="outline-shortcut" href="#on-this-page">{{ '本页目录' if zh else 'On this page' }} ↓</a>{% endif %}
+    {% for group, sections in navigation %}<section><h2>{{ group }}</h2>
+      <ul>{% for label, items in sections %}
+        {% if label %}<li class="nav-branch"><details{% if page in items %} open{% endif %}>
+          <summary>{{ label[0 if zh else 1] }}
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="m3.5 6 4.5 4.5L12.5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary><ul aria-label="{{ label[0 if zh else 1] }}">{% endif %}
+        {% for item in items %}<li><a href="{{ href(item.key) }}" {% if item.key==page.key %}aria-current="page"{% endif %}>{{ item.nav_title(lang) }}</a></li>{% endfor %}
+        {% if label %}</ul></details></li>{% endif %}
+      {% endfor %}</ul>
+    </section>{% endfor %}
+    {% if repo %}<a class="rail-note" href="{{ repo }}/compare">{{ '在 GitHub 上提交 PR' if zh else 'Open a pull request' }} ↗</a>{% endif %}
+  </nav></aside>
+  <main id="main" tabindex="-1">
+    <header class="heading {{ 'home' if page.key=='home' else '' }}">
+      <div class="kicker">{{ 'AN OPEN MAP OF AI & PCB DESIGN' if page.key=='home' else page.group }}{% if count %}<span>{{ count }} {{ ('项评测' if zh else 'benchmarks') if page.key == 'benchmarks' else ('项资源' if zh else 'resources') }}</span>{% endif %}</div>
+      <h1>{{ page.title(lang) }}</h1>
+      {% if page.key=='home' %}
+        {% if updated %}<p class="date"><time datetime="{{ updated.isoformat() }}">{% if zh %}更新于 {{ updated.year }} 年 {{ updated.month }} 月 {{ updated.day }} 日。{% else %}Updated {{ updated.strftime('%B') }} {{ updated.day }}, {{ updated.year }}.{% endif %}</time></p>{% endif %}
+      {% elif page.key != 'benchmarks' %}<p class="deck">{% if intro_html %}{{ intro_html|safe }}{% else %}{{ description }}{% endif %}</p>{% endif %}
+    </header>
+    {% if page.key != 'home' %}{{ outline() }}{% endif %}
+    <article{% if page.key in ('benchmarks', 'data-procurement') %} class="{{ page.key }}"{% endif %}>
+      {% if page.key=='home' %}
+      {% set cover = versioned(workflow_image) %}
+      <a class="cover" href="{{ cover }}" aria-label="{{ '查看 PCB 设计流程大图' if zh else 'View the full-size PCB design workflow' }}">
+        <img src="{{ cover }}" width="1672" height="941" alt="{{ '从需求与选型画出原理图，再结合结构约束进行布局。布线与铺铜完成后，检查设计规则并打样。' if zh else 'Requirements and part selection inform the schematic. The schematic and mechanical constraints guide placement. Routing and copper pours lead to design rule checks and prototype fabrication.' }}">
+      </a>{{ outline() }}{% endif %}
+      {{ body|safe }}
+      {% if page.key == 'harbor' %}{% include "harbor.html" %}{% endif %}
+    </article>
+    <footer><nav class="pager" aria-label="{{ '翻页' if zh else 'Pagination' }}">
+      {% if previous %}<a href="{{ href(previous.key) }}"><small>← {{ '上一页' if zh else 'Previous' }}</small>{{ previous.title(lang) }}</a>{% endif %}
+      {% if upcoming %}<a class="next" href="{{ href(upcoming.key) }}"><small>{{ '下一页' if zh else 'Next' }} →</small>{{ upcoming.title(lang) }}</a>{% endif %}
+    </nav><div class="colophon">{{ brand }}</div></footer>
+  </main>
+  <aside class="contents">{% if headings %}<h2>{{ '本页内容' if zh else 'On this page' }}</h2><nav>{% for h in headings %}<a href="#{{ h.id }}" class="{{ h.level }}">{{ h.text }}</a>{% endfor %}</nav>{% endif %}</aside>
+</div>
+<dialog aria-labelledby="search-title"><div class="dialog-top"><strong id="search-title">{{ '搜索' if zh else 'Search' }} {{ brand }}</strong><button class="escape" aria-label="{{ '关闭搜索' if zh else 'Close search' }}"><span class="key-label">Esc</span><span class="touch-label">{{ '关闭' if zh else 'Close' }}</span></button></div>
+<input id="query" type="search" aria-labelledby="search-title" autocomplete="off" placeholder="{{ '输入论文、项目或设计环节…' if zh else 'Enter a paper, project, or design stage…' }}">
+<p class="search-status" role="status"></p><ul class="results"></ul></dialog>
+<script id="search-index" type="application/json">{{ search_json|safe }}</script>
+</body></html>

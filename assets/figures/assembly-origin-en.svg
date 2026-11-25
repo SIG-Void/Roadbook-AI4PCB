@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="still" viewBox="0 0 360 261" role="img" aria-labelledby="title description">
+  <title id="title">Bottom-side placement on Cynthion</title>
+  <desc id="description">C1 stays at Y = 35.3 mm. Negating bottom-side X changes its exported X from 25.1 to minus 25.1 mm. U1 stays fixed on the top side.</desc>
+  <style>text { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+#travel {display:none}
+@media (prefers-reduced-motion:no-preference) { #travel {display:inline;animation:guide 1.05s ease-in-out .1s 1 both} }
+@keyframes guide {0%{opacity:0;transform:translateX(0)} 12%{opacity:1} 85%{opacity:1} 100%{opacity:0;transform:translateX(-185.74px)}}
+svg:target #travel {display:none!important;animation:none!important}</style>
+  <rect x="0" y="0" width="360" height="261" stroke="none" stroke-width="0" fill="#FFFFFF" />
+  <g id="fixture-axes">
+    <polyline points="25,188 333,188" fill="none" stroke="#525252" stroke-width="1.4" stroke-linejoin="round" />
+    <polyline points="328,185 333,188 328,191" fill="none" stroke="#525252" stroke-width="1.4" stroke-linejoin="round" />
+    <polyline points="172,196 172,27" fill="none" stroke="#525252" stroke-width="1.4" stroke-linejoin="round" />
+    <polyline points="169,32 172,27 175,32" fill="none" stroke="#525252" stroke-width="1.4" stroke-linejoin="round" />
+    <text x="335" y="211" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">X</text>
+    <text x="156" y="34" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">Y</text>
+    <circle cx="172" cy="188" r="3" stroke="none" stroke-width="0" fill="#525252" />
+    <text x="172" y="215" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">Datum (0, 0)</text>
+  </g>
+  <g id="bottom-component">
+    <polyline points="79.13,186 79.13,65.39" fill="none" stroke="#C6C6C6" stroke-width="1" stroke-linejoin="round" stroke-dasharray="3 3" />
+    <polyline points="264.87,186 264.87,65.39" fill="none" stroke="#C6C6C6" stroke-width="1" stroke-linejoin="round" stroke-dasharray="3 3" />
+    <polyline points="255.87,57.39 89.13,57.39" fill="none" stroke="#0F62FE" stroke-width="1.6" stroke-linejoin="round" />
+    <polyline points="95.13,53.39 89.13,57.39 95.13,61.39" fill="none" stroke="#0F62FE" stroke-width="1.6" stroke-linejoin="round" />
+    <circle cx="264.87" cy="57.39" r="6" stroke="#525252" stroke-width="2.1" fill="#FFFFFF" />
+    <circle cx="79.13" cy="57.39" r="6" stroke="#0F62FE" stroke-width="2.6" fill="#FFFFFF" />
+    <text x="79.13" y="40" text-anchor="middle" font-size="16" font-weight="600" fill="#0F62FE">C1 mirrored</text>
+    <text x="264.87" y="40" text-anchor="middle" font-size="18" font-weight="600" fill="#161616">C1</text>
+    <text x="79.13" y="210" text-anchor="middle" font-size="16" font-weight="600" fill="#0F62FE">−25.1</text>
+    <text x="264.87" y="210" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">+25.1</text>
+  </g>
+  <g id="top-component">
+    <rect x="292.49" y="150.87" width="8.4" height="8.4" stroke="#525252" stroke-width="1.6" fill="#FFFFFF" />
+    <text x="296.69" y="134" text-anchor="middle" font-size="16" font-weight="400" fill="#525252">U1 top</text>
+  </g>
+  <circle id="travel" cx="264.87" cy="57.39" r="3.5" fill="#0F62FE" />
+  <text x="20" y="243" text-anchor="start" font-size="16" font-weight="400" fill="#525252">Units: mm</text>
+</svg>

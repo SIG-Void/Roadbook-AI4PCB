@@ -1,0 +1,82 @@
+[
+  {
+    "heading": {"zh": "综述", "en": "The two design files"},
+    "after_paragraph": {"zh": 3, "en": 2},
+    "source_section": "basic_concepts_and_workflow",
+    "images": [
+      {
+        "file": "coldfire-schematic.png", "width": 682, "height": 759,
+        "caption": {
+          "zh": "原理图。沿 U201A 的 3 脚向右读，输出经 270 Ω 电阻 R202 接到发光二极管 LED201。",
+          "en": "Schematic. Follow pin 3 of U201A through the 270 Ω resistor R202 to the light-emitting diode LED201."
+        },
+        "alt": {
+          "zh": "ColdFire 原理图局部，U201 的四路缓冲器分别经电阻接到四只 LED。",
+          "en": "Four buffer outputs on a ColdFire schematic, each connected to an LED through a resistor."
+        }
+      },
+      {
+        "file": "coldfire-layout.png", "width": 669, "height": 484,
+        "caption": {
+          "zh": "板图。三个接口沿上边缘排列。焊盘给出了接线的位置，各层的铜线绕开器件，把焊盘连起来。",
+          "en": "Board layout. Three connectors sit along the top edge. Tracks on different layers connect the pads."
+        },
+        "alt": {
+          "zh": "ColdFire 板图，能看到板边接口、两组密集焊盘和多层走线。",
+          "en": "ColdFire board layout with edge connectors, groups of fine-pitch pads, and tracks on several layers."
+        }
+      }
+    ]
+  },
+  {
+    "heading": {"zh": "结构设计", "en": "Check the enclosure"},
+    "source_section": "3d_viewer",
+    "images": [
+      {
+        "file": "raytracing.png", "width": 1076, "height": 747,
+        "caption": {
+          "zh": "KiCad 从电池座一侧观察这块 LED 板。黑色电池座和红色 LED 分装在两面。核对外壳时，两面都要留出器件的高度。",
+          "en": "The 3D view looks toward the battery holder. The holder and the red LED sit on opposite sides. Check enclosure clearance on both sides."
+        },
+        "alt": {
+          "zh": "KiCad 三维查看器中的 LED 板，黑色电池座朝上，红色 LED 从另一面伸出。",
+          "en": "KiCad 3D view of an LED board with a battery holder facing up and a red LED below the board."
+        }
+      }
+    ]
+  },
+  {
+    "heading": {"zh": "PCB走线", "en": "Route the board"},
+    "source_section": "routing_tracks",
+    "images": [
+      {
+        "file": "routing-complete.png", "width": 889, "height": 855,
+        "caption": {
+          "zh": "沿右侧 VCC 焊盘往下看。蓝线在底层，经过圆形过孔后，红线在顶层接到 R1 的 1 号焊盘。",
+          "en": "Follow VCC from the pad on the right. The blue track runs on the bottom layer. At the via, the red track continues on the top layer to pad 1 of R1."
+        },
+        "alt": {
+          "zh": "LED 板布线图，右侧一段蓝色走线通过过孔连接红色走线，下方的红线连接电阻和 LED。",
+          "en": "LED board with blue and red tracks joined at a via on the right. A red track connects the resistor to the LED."
+        }
+      }
+    ]
+  },
+  {
+    "heading": {"zh": "DRC和最终检查", "en": "Run the final checks"},
+    "source_section": "drc",
+    "images": [
+      {
+        "file": "drc-errors.png", "width": 684, "height": 550,
+        "caption": {
+          "zh": "教程移动了 R1，保留旧的铺铜结果。第一条错误显示，VCC 焊盘到 GND 铜区的间距要求为 0.5000 mm，实际为 0.0000 mm。重新填充铜区后再跑 DRC，六项错误全部消除。",
+          "en": "The tutorial moves R1 and keeps the previous copper fill. The first error shows zero clearance from VCC to GND, against a 0.5000 mm rule. Refilling the zone and running DRC again clears all six errors."
+        },
+        "alt": {
+          "zh": "KiCad 设计规则检查窗口，显示六项错误，第一项列出 R1 的 VCC 焊盘及 B.Cu 层的 GND 铜区。",
+          "en": "KiCad reports six design rule errors. The first identifies the VCC pad of R1 and the GND zone on the bottom copper layer."
+        }
+      }
+    ]
+  }
+]
