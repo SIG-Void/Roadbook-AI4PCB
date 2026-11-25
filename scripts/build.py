@@ -232,6 +232,11 @@ def build():
         raise ValueError("Invalid GITHUB_REPOSITORY")
     repo_url = "https://github.com/" + repo if repo else ""
     public_url = os.getenv("SITE_URL", "").rstrip("/")
+    analytics_token = ""
+    if public_url and os.getenv("GITHUB_ACTIONS") == "true":
+        analytics_token = os.getenv("CLOUDFLARE_WEB_ANALYTICS_TOKEN", "").strip()
+        if analytics_token and not re.fullmatch(r"[a-fA-F0-9]{32}", analytics_token):
+            raise ValueError("Expected a 32-character hexadecimal Cloudflare Web Analytics site token")
     OUT.mkdir(exist_ok=True)
     published_example = OUT / "assets/harbor"
     if published_example.is_dir():
@@ -273,7 +278,7 @@ def build():
             html = template.render(harbor=harbor_example, versions=versions, brand=BY_KEY["home"].title(lang), fragments=fragments, search_json=search_json, page=page, lang=lang, zh=lang == "zh", navigation=navigation,
                                    previous=PAGES[i - 1] if i else None, upcoming=PAGES[i + 1] if i + 1 < len(PAGES) else None,
                                    href=href, asset=asset, repo=repo_url, public_url=public_url, folder=folder,
-                                   root=relative(folder, ".") + "/", updated=updated,
+                                   root=relative(folder, ".") + "/", updated=updated, analytics_token=analytics_token,
                                    **data)
             target = OUT / folder / "index.html"
             target.parent.mkdir(parents=True, exist_ok=True)
