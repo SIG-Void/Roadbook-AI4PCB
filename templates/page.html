@@ -86,5 +86,5 @@
 <input id="query" type="search" aria-labelledby="search-title" autocomplete="off" placeholder="{{ '输入论文、项目或设计环节…' if zh else 'Enter a paper, project, or design stage…' }}">
 <p class="search-status" role="status"></p><ul class="results"></ul></dialog>
 <script id="search-index" type="application/json">{{ search_json|safe }}</script>
-{% if analytics_token %}<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{ {"token": analytics_token}|tojson }}'></script>{% endif %}
+{% if analytics_token %}<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{ {"token": analytics_token}|tojson }}'></script>{% endif %}
 </body></html>
