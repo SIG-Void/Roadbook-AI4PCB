@@ -12,6 +12,10 @@
 - **提高大模型的 PCB 设计能力。** 欢迎硬件和模型团队一起研究怎样用监督微调（SFT）或强化学习（RL），让模型学会应用设计约束、比较方案、验证板图。
 - **定制 PCB 训练数据。** 我们可以按任务提供训练样本、工程师操作轨迹和带验收依据的参考答卷。
 
-我们建了一个 AI × PCB 交流群，欢迎做相关研究和工程开发的朋友加我微信，进群聊聊。
+<h2 id="wechat-group">加入 Roadbook AI4PCB 交流群</h2>
 
-**联系微信**　`LeeFinn2027` · Lee，SIGVoid（北京思格涡野智能科技）Cofounder。
+用微信扫描下方二维码，即可进群。
+
+<p><img class="wechat-qr" src="../../assets/figures/wechat-group.jpg" width="288" height="288" alt="Roadbook AI4PCB 微信群二维码"></p>
+
+如果二维码已过期，可以加微信 **LeeFinn2027**，申请进群。加微信请备注来意。

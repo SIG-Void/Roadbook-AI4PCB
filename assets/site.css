@@ -181,6 +181,7 @@ html:has(dialog[open]) { overflow: hidden }
   .escape .touch-label { display: inline }
 }
 .article-figure { max-width: 580px; margin: 26px auto 32px }
+.article-figure:has(.wechat-qr) { max-width: 288px; margin: 16px 0 }
 .article-figure > a, .article-figure picture, .article-figure img { width: 100%; display: block }
 .article-figure img { height: auto; border-radius: 6px }
 .article-figure > a { cursor: zoom-in }
