@@ -33,4 +33,6 @@ Roadbook AI4PCB 持续整理 **AI 辅助印制电路板（PCB）设计**的论�
 
 可以从[追踪 RP2040 电源网](rp2040-power.md)、[核对贴片原点](assembly-origin.md)或[按板族划分训练集](board-family-split.md)开始。[查看全部工程博客 →](blog.md)
 
-欢迎 PCB 专家参与评测标准制定与答卷复核。模型联合研究和训练数据定制也可直接联系团队。[合作方式与微信 →](about.md#collaborate)
+欢迎加入 Roadbook AI4PCB 微信群，交流 AI 在 PCB 领域的进展和应用。
+
+**[进群二维码→](about.md#wechat-group)**
