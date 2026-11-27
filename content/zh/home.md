@@ -7,10 +7,10 @@ Roadbook AI4PCB 持续整理 **AI 辅助印制电路板（PCB）设计**的论�
 <h3><a href="benchmarks.md#team-runs">ALE · KiCad 工程题</a></h3>
 <p>两个模型各做两道题。每个 ZIP 都含逐步工具调用记录、模型交回的 KiCad 工程和评分结果。</p>
 <dl>
-<dt>整板布局</dt>
-<dd><a href="../../assets/runs/ale-mini-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 整板布局 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-mini-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 整板布局 ZIP">Qwen4-Max-Preview ↓</a></dd>
-<dt>导航开关板修复</dt>
-<dd><a href="../../assets/runs/ale-navswitch-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 导航开关板修复 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-navswitch-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 导航开关板修复 ZIP">Qwen4-Max-Preview ↓</a></dd>
+<dt><code>engineering/pcb_layout_kicad_1</code><span lang="en">Mini Encabulator KiCad PCB Layout</span></dt>
+<dd><a href="../../assets/runs/ale-mini-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 的 Mini Encabulator KiCad PCB Layout 作答 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-mini-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 的 Mini Encabulator KiCad PCB Layout 作答 ZIP">Qwen4-Max-Preview ↓</a></dd>
+<dt><code>engineering/kicad_navswitch_library_integration_release_002</code><span lang="en">KiCad Navswitch Library Integration</span></dt>
+<dd><a href="../../assets/runs/ale-navswitch-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 的 KiCad Navswitch Library Integration 作答 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-navswitch-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 的 KiCad Navswitch Library Integration 作答 ZIP">Qwen4-Max-Preview ↓</a></dd>
 </dl>
 </section>
 <section>
