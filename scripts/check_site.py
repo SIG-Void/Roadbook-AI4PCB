@@ -10,6 +10,11 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 OLD_CONTACTS = ("dengjiajicarl", "dengjiaji@")
+TRACE_DOWNLOADS = {
+    "ale-mini-deepseek.zip", "ale-mini-qwen4.zip",
+    "ale-navswitch-deepseek.zip", "ale-navswitch-qwen4.zip",
+    "benchcad-public-t6-traces.csv", "benchcad-public-t6.csv",
+}
 
 
 def require(condition, message):
@@ -145,10 +150,20 @@ def verify():
         start = lang_root / "index.html"
         workflow = lang_root / "workflow" / "index.html"
         paper_page = lang_root / "research/papers/index.html"
+        benchmark_page = lang_root / "research/benchmarks/index.html"
+        featured = pages[benchmark_page]
         doc = pages[start]
-        first = doc.select_one("article h2")
-        require(first and first.get_text(strip=True) == paper_heading, f"{lang}: papers must lead the homepage")
-        first_list = first.find_next_sibling()
+        headings = doc.select("article h2")
+        require(len(headings) >= 2 and headings[0].get("id") == "model-traces"
+                and headings[1].get_text(strip=True) == paper_heading,
+                f"{lang}: the homepage must show model traces followed by selected papers")
+        expected_files = {DIST / "assets/runs" / name for name in TRACE_DOWNLOADS}
+        home_files = {check_link(start, link["href"]) for link in doc.select("article a[download][href]")
+                      if link.find_previous("h2") is headings[0]}
+        benchmark_files = {check_link(benchmark_page, link["href"]) for link in featured.select("article a[download][href]")}
+        require(expected_files <= home_files and expected_files <= benchmark_files,
+                f"{lang}: the homepage trace section and benchmarks must link to the published run files")
+        first_list = headings[1].find_next_sibling()
         require(first_list and first_list.name == "ul" and first_list.select("li a[href]"),
                 f"{lang}: no papers under the featured heading")
         sections = {section.h2.get_text(strip=True): section for section in doc.select("#directory section")}
@@ -176,7 +191,6 @@ def verify():
         require(section_pages("PCB") == [workflow, *design_pages], f"{lang}: incorrect PCB navigation")
         require(all(figure.select_one("a[href]") and figure.select_one("img[alt]") for figure in pages[workflow].select("figure"))
                 and pages[workflow].select_one("figure"), f"{lang}: missing linked workflow illustrations")
-        featured = pages[lang_root / "research/benchmarks/index.html"]
         benchmark_sections = [node["id"] for node in featured.select("article h2")]
         require(benchmark_sections[:3] == ["ale", "omnilayout", "benchcad-t6"],
                 f"{lang}: incorrect benchmark order")

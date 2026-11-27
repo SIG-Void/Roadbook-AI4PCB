@@ -93,6 +93,15 @@ article pre code { padding: 0; background: transparent; font-size: 13px; white-s
 article table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.8; margin: 22px 0 }
 article td, article th { border-bottom: 1px solid var(--line); text-align: start; vertical-align: top; padding: 12px 15px }
 article th { background: var(--layer); font-weight: 600 }
+.trace-downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 22px 28px }
+.trace-downloads section { border-top: 1px solid var(--line); padding-top: 14px }
+.trace-downloads h3 { margin: 0 0 8px }
+.trace-downloads p { margin: 0 0 12px }
+.trace-downloads dl, .trace-downloads ul { margin: 0; padding: 0 }
+.trace-downloads dt { font-weight: 600 }
+.trace-downloads dd { margin: 0 0 8px }
+.trace-downloads li { list-style: none; margin: 0 0 8px; padding: 0 }
+.trace-downloads a[download] { display: inline-block }
 .contents { padding-top: 50px }
 .contents h2 { font-size: 11px; margin: 0 0 15px }
 .contents nav { border-left: 1px solid var(--line) }

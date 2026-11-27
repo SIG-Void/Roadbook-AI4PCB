@@ -1,5 +1,28 @@
 Roadbook AI4PCB 持续整理 **AI 辅助印制电路板（PCB）设计**的论文、开源工具、数据集和评测。硬件工程师可以按原理图、布局、布线和设计审查查找方法。AI 研究者可以找到板文件、训练样本，以及检查设计结果的程序。
 
+<h2 id="model-traces">模型作答轨迹下载</h2>
+
+<div class="trace-downloads">
+<section>
+<h3><a href="benchmarks.md#team-runs">ALE · KiCad 工程题</a></h3>
+<p>两个模型各做两道题。每个 ZIP 都含逐步工具调用记录、模型交回的 KiCad 工程和评分结果。</p>
+<dl>
+<dt>整板布局</dt>
+<dd><a href="../../assets/runs/ale-mini-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 整板布局 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-mini-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 整板布局 ZIP">Qwen4-Max-Preview ↓</a></dd>
+<dt>导航开关板修复</dt>
+<dd><a href="../../assets/runs/ale-navswitch-deepseek.zip" download aria-label="下载 DeepSeek V4.1 Flash 导航开关板修复 ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-navswitch-qwen4.zip" download aria-label="下载 Qwen4-Max-Preview 导航开关板修复 ZIP">Qwen4-Max-Preview ↓</a></dd>
+</dl>
+</section>
+<section>
+<h3><a href="benchmarks.md#public-t6">BenchCAD T6 · 从板图恢复接线</a></h3>
+<p>三个模型做了 9 道公开练习题。45 次作答共记录 1,432 条操作，可按模型、批次和题号查看每轮动作。</p>
+<ul>
+<li><a href="../../assets/runs/benchcad-public-t6-traces.csv" download>下载逐题操作轨迹（CSV）↓</a></li>
+<li><a href="../../assets/runs/benchcad-public-t6.csv" download>下载五批成绩（CSV）↓</a></li>
+</ul>
+</section>
+</div>
+
 ## AI × PCB 论文精选
 
 - [SchGen](https://arxiv.org/abs/2605.30345)（2026）从文字需求生成可在 KiCad 中编辑的原理图。模型用器件符号表示元件，按引脚名称写出连接。论文用连线准确率等指标检查结果。
