@@ -7,9 +7,9 @@ Roadbook AI4PCB is a guide to **AI for printed circuit board (PCB) design**. Bro
 <h3><a href="benchmarks.md#team-runs">ALE · KiCad design tasks</a></h3>
 <p>Two models each completed two runs. Each ZIP contains the tool calls in sequence, the submitted KiCad project, and its score.</p>
 <dl>
-<dt><code>engineering/pcb_layout_kicad_1</code><span lang="en">Mini Encabulator KiCad PCB Layout</span></dt>
+<dt lang="en">Mini Encabulator KiCad PCB Layout</dt>
 <dd><a href="../../assets/runs/ale-mini-deepseek.zip" download aria-label="Download DeepSeek V4.1 Flash submission for Mini Encabulator KiCad PCB Layout (ZIP)">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-mini-qwen4.zip" download aria-label="Download Qwen4-Max-Preview submission for Mini Encabulator KiCad PCB Layout (ZIP)">Qwen4-Max-Preview ↓</a></dd>
-<dt><code>engineering/kicad_navswitch_library_integration_release_002</code><span lang="en">KiCad Navswitch Library Integration</span></dt>
+<dt lang="en">KiCad Navswitch Library Integration</dt>
 <dd><a href="../../assets/runs/ale-navswitch-deepseek.zip" download aria-label="Download DeepSeek V4.1 Flash submission for KiCad Navswitch Library Integration (ZIP)">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-navswitch-qwen4.zip" download aria-label="Download Qwen4-Max-Preview submission for KiCad Navswitch Library Integration (ZIP)">Qwen4-Max-Preview ↓</a></dd>
 </dl>
 </section>
