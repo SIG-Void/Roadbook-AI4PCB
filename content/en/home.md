@@ -1,5 +1,28 @@
 Roadbook AI4PCB is a guide to **AI for printed circuit board (PCB) design**. Browse research on drawing schematics, placing components, routing traces, and checking layouts. Where authors share them, entries link to board files, training data, and evaluation code.
 
+<h2 id="model-traces">Download model action traces</h2>
+
+<div class="trace-downloads">
+<section>
+<h3><a href="benchmarks.md#team-runs">ALE · KiCad design tasks</a></h3>
+<p>Two models each completed two runs. Each ZIP contains the tool calls in sequence, the submitted KiCad project, and its score.</p>
+<dl>
+<dt>Board layout</dt>
+<dd><a href="../../assets/runs/ale-mini-deepseek.zip" download aria-label="Download the DeepSeek V4.1 Flash board layout ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-mini-qwen4.zip" download aria-label="Download the Qwen4-Max-Preview board layout ZIP">Qwen4-Max-Preview ↓</a></dd>
+<dt>Navigation switch board repair</dt>
+<dd><a href="../../assets/runs/ale-navswitch-deepseek.zip" download aria-label="Download the DeepSeek V4.1 Flash switch repair ZIP">DeepSeek V4.1 Flash ↓</a> · <a href="../../assets/runs/ale-navswitch-qwen4.zip" download aria-label="Download the Qwen4-Max-Preview switch repair ZIP">Qwen4-Max-Preview ↓</a></dd>
+</dl>
+</section>
+<section>
+<h3><a href="benchmarks.md#public-t6">BenchCAD T6 · Recover board connections</a></h3>
+<p>Three models worked on nine public practice boards. The 45 runs contain 1,432 recorded actions. Filter the traces by model, batch, or case.</p>
+<ul>
+<li><a href="../../assets/runs/benchcad-public-t6-traces.csv" download>Download action traces by case (CSV) ↓</a></li>
+<li><a href="../../assets/runs/benchcad-public-t6.csv" download>Download scores for all five batches (CSV) ↓</a></li>
+</ul>
+</section>
+</div>
+
 ## Selected AI × PCB papers
 
 - [SchGen](https://arxiv.org/abs/2605.30345) (2026) generates editable KiCad schematics from written requirements. It places component symbols and connects their pins by name. The paper measures the accuracy of the resulting connections.
